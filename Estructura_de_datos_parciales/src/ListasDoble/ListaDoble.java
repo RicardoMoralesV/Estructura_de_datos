@@ -3,9 +3,9 @@ package ListasDoble;
 
 
 public class ListaDoble {
-	
-	private NodoDoble inicio;
 	private NodoDoble fin;
+	private NodoDoble inicio;
+	
 	
 	public ListaDoble(){
 		inicio=null;
@@ -114,7 +114,7 @@ public class ListaDoble {
 	public  StringBuilder recorrerhaciaatras(){
 		StringBuilder cadena =new  StringBuilder();
 		NodoDoble temporal=inicio;
-		cadena.append("NULL<--->");
+		cadena.append("NULL<---");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
 		cadena.append("<--->");
@@ -129,7 +129,7 @@ public class ListaDoble {
 	public  StringBuilder recorrerhaciaadelante(){
 		StringBuilder cadena =new  StringBuilder();
 		NodoDoble temporal=fin;
-		cadena.append("NULL<--->");
+		cadena.append("NULL--->");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
 		cadena.append("<--->");

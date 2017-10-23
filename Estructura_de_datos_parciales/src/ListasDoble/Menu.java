@@ -58,11 +58,11 @@ public class Menu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Insertar nodo adelante");
-		btnNewButton.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton.setBackground(Color.CYAN);
-		btnNewButton.setForeground(Color.RED);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btninsertaradelante = new JButton("Insertar nodo adelante");
+		btninsertaradelante.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btninsertaradelante.setBackground(Color.CYAN);
+		btninsertaradelante.setForeground(Color.RED);
+		btninsertaradelante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				musica nuevo=new musica();
 				
@@ -83,12 +83,12 @@ public class Menu extends JFrame {
 				txttipo.setText("");
 			}
 		});
-		btnNewButton.setBounds(63, 57, 162, 23);
-		contentPane.add(btnNewButton);
+		btninsertaradelante.setBounds(63, 57, 162, 23);
+		contentPane.add(btninsertaradelante);
 		
-		JButton btnNewButton_1 = new JButton("Insertar nodo atras");
-		btnNewButton_1.setForeground(Color.RED);
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		JButton btninsertaratras = new JButton("Insertar nodo atras");
+		btninsertaratras.setForeground(Color.RED);
+		btninsertaratras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				musica nuevo=new musica();
@@ -109,93 +109,103 @@ public class Menu extends JFrame {
 				txttipo.setText("");
 			}
 		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_1.setBackground(Color.CYAN);
-		btnNewButton_1.setBounds(63, 91, 162, 23);
-		contentPane.add(btnNewButton_1);
+		btninsertaratras.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btninsertaratras.setBackground(Color.CYAN);
+		btninsertaratras.setBounds(63, 91, 162, 23);
+		contentPane.add(btninsertaratras);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar primer nodo");
-		btnNewButton_2.setForeground(Color.RED);
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		JButton btneliminarprimero = new JButton("Eliminar primer nodo");
+		btneliminarprimero.setForeground(Color.RED);
+		btneliminarprimero.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
 				int x=JOptionPane.showConfirmDialog(null,"Desea eliminar este valor de la primera posicion" );
-				if(JOptionPane.YES_OPTION==1){
+				if(JOptionPane.YES_OPTION==x){
+					
 				ld.eliminarprimernodo();
 				JOptionPane.showMessageDialog(null,"Valor eliminado de la primera posicion");
+				txtresul.setText("");
+				
+				
 				}
 				
 				
 			}
 		});
-		btnNewButton_2.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_2.setBackground(Color.CYAN);
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btneliminarprimero.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btneliminarprimero.setBackground(Color.CYAN);
+		btneliminarprimero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(63, 125, 162, 23);
-		contentPane.add(btnNewButton_2);
+		btneliminarprimero.setBounds(63, 125, 162, 23);
+		contentPane.add(btneliminarprimero);
 		
-		JButton btnNewButton_3 = new JButton("Eliminar ultimo nodo");
-		btnNewButton_3.setForeground(Color.RED);
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
+		JButton btneliminarultimo = new JButton("Eliminar ultimo nodo");
+		btneliminarultimo.setForeground(Color.RED);
+		btneliminarultimo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int x=JOptionPane.showConfirmDialog(null,"Desea eliminar este valor de la ultima posicion" );
-				if(JOptionPane.YES_OPTION==1){
+				int y=JOptionPane.showConfirmDialog(null,"Desea eliminar este valor de la primera posicion" );
+				if(JOptionPane.YES_OPTION==y){
+					
 				ld.eliminarultimonodo();
 				JOptionPane.showMessageDialog(null,"Valor eliminado de la ultima posicion");
+				txtresul.setText("");
+				
+				
+				
 				}
 			}
 		});
-		btnNewButton_3.addActionListener(new ActionListener() {
+		btneliminarultimo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_3.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_3.setBackground(Color.CYAN);
-		btnNewButton_3.setBounds(63, 159, 162, 23);
-		contentPane.add(btnNewButton_3);
+		btneliminarultimo.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btneliminarultimo.setBackground(Color.CYAN);
+		btneliminarultimo.setBounds(63, 159, 162, 23);
+		contentPane.add(btneliminarultimo);
 		
-		JButton btnNewButton_4 = new JButton("Recorrido hacia adelante");
-		btnNewButton_4.setForeground(Color.RED);
-		btnNewButton_4.addMouseListener(new MouseAdapter() {
+		JButton btnrecorridoadelante = new JButton("Recorrido hacia adelante");
+		btnrecorridoadelante.setForeground(Color.RED);
+		btnrecorridoadelante.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				txtresul.setText(ld.recorrerhaciaadelante().toString());
 			}
 		});
-		btnNewButton_4.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_4.addActionListener(new ActionListener() {
+		btnrecorridoadelante.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btnrecorridoadelante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		btnNewButton_4.setBackground(Color.CYAN);
-		btnNewButton_4.setBounds(63, 228, 162, 23);
-		contentPane.add(btnNewButton_4);
+		btnrecorridoadelante.setBackground(Color.CYAN);
+		btnrecorridoadelante.setBounds(63, 228, 162, 23);
+		contentPane.add(btnrecorridoadelante);
 		
-		JButton btnNewButton_5 = new JButton("Recorrido hacia atras");
-		btnNewButton_5.setForeground(Color.RED);
-		btnNewButton_5.addMouseListener(new MouseAdapter() {
+		JButton btnrecorridoatras = new JButton("Recorrido hacia atras");
+		btnrecorridoatras.setForeground(Color.RED);
+		btnrecorridoatras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e)
 			{
 				txtresul.setText(ld.recorrerhaciaatras().toString());
 			}
 		});
-		btnNewButton_5.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_5.setBackground(Color.CYAN);
-		btnNewButton_5.setBounds(63, 194, 162, 23);
-		contentPane.add(btnNewButton_5);
+		btnrecorridoatras.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btnrecorridoatras.setBackground(Color.CYAN);
+		btnrecorridoatras.setBounds(63, 194, 162, 23);
+		contentPane.add(btnrecorridoatras);
 		
-		JButton btnNewButton_8 = new JButton("Salir");
-		btnNewButton_8.setForeground(Color.RED);
-		btnNewButton_8.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		btnNewButton_8.setBackground(Color.CYAN);
-		btnNewButton_8.setBounds(63, 262, 162, 23);
-		contentPane.add(btnNewButton_8);
+		JButton btnsalir = new JButton("Salir");
+		btnsalir.setForeground(Color.RED);
+		btnsalir.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		btnsalir.setBackground(Color.CYAN);
+		btnsalir.setBounds(63, 262, 162, 23);
+		contentPane.add(btnsalir);
 		
 		txttipo = new JTextField();
 		txttipo.setForeground(Color.BLUE);
@@ -263,11 +273,32 @@ public class Menu extends JFrame {
 		contentPane.add(lblIngreseElId);
 		
 		txtresul = new JTextField();
+		txtresul.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
 		txtresul.setForeground(Color.RED);
 		txtresul.setBackground(Color.CYAN);
 		txtresul.setBounds(0, 356, 641, 55);
 		contentPane.add(txtresul);
 		txtresul.setColumns(10);
+		
+		JButton btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				txtid.setText("");
+				txtalbum.setText("");
+				txtautor.setText("");
+				txtcancion.setText("");
+				txttipo.setText("");
+				txtresul.setText("");
+			
+			}
+		});
+		btnLimpiar.setBounds(283, 92, 89, 23);
+		contentPane.add(btnLimpiar);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ricardo Morales\\workspace\\Estructura_datos\\imagen\\Fondo negro relieve verde.jpg"));
