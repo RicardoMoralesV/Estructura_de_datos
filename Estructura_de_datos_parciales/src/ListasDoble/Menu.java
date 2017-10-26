@@ -29,7 +29,6 @@ public class Menu extends JFrame {
 	private JTextField txtid;
 	
 	ListaDoble ld=new ListaDoble();
-	private JTextField txtresul;
 
 	/**
 	 * Launch the application.
@@ -57,6 +56,13 @@ public class Menu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		TextArea txtresul = new TextArea();
+		txtresul.setFont(new Font("Arial Black", Font.ITALIC, 13));
+		txtresul.setBackground(Color.CYAN);
+		txtresul.setBounds(0, 291, 641, 110);
+		contentPane.add(txtresul);
+		
 		
 		JButton btninsertaradelante = new JButton("Insertar nodo adelante");
 		btninsertaradelante.setFont(new Font("Tahoma", Font.ITALIC, 13));
@@ -187,6 +193,10 @@ public class Menu extends JFrame {
 		contentPane.add(btnrecorridoadelante);
 		
 		JButton btnrecorridoatras = new JButton("Recorrido hacia atras");
+		btnrecorridoatras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnrecorridoatras.setForeground(Color.RED);
 		btnrecorridoatras.addMouseListener(new MouseAdapter() {
 			@Override
@@ -204,85 +214,73 @@ public class Menu extends JFrame {
 		btnsalir.setForeground(Color.RED);
 		btnsalir.setFont(new Font("Tahoma", Font.ITALIC, 13));
 		btnsalir.setBackground(Color.CYAN);
-		btnsalir.setBounds(63, 262, 162, 23);
+		btnsalir.setBounds(249, 125, 162, 23);
 		contentPane.add(btnsalir);
 		
 		txttipo = new JTextField();
 		txttipo.setForeground(Color.BLUE);
 		txttipo.setBackground(Color.CYAN);
-		txttipo.setBounds(449, 117, 162, 31);
+		txttipo.setBounds(449, 83, 162, 31);
 		contentPane.add(txttipo);
 		txttipo.setColumns(10);
 		
 		JLabel lblIngreseElDato = new JLabel("Ingrese el tipo de cancion");
 		lblIngreseElDato.setForeground(Color.RED);
 		lblIngreseElDato.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblIngreseElDato.setBounds(449, 101, 192, 14);
+		lblIngreseElDato.setBounds(449, 61, 192, 14);
 		contentPane.add(lblIngreseElDato);
 		
 		txtcancion = new JTextField();
 		txtcancion.setForeground(Color.BLUE);
 		txtcancion.setBackground(Color.CYAN);
 		txtcancion.setColumns(10);
-		txtcancion.setBounds(449, 173, 162, 31);
+		txtcancion.setBounds(449, 139, 162, 31);
 		contentPane.add(txtcancion);
 		
 		JLabel lblIngreseElGenero = new JLabel("Ingrese el cancion");
 		lblIngreseElGenero.setForeground(Color.RED);
 		lblIngreseElGenero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblIngreseElGenero.setBounds(449, 158, 162, 14);
+		lblIngreseElGenero.setBounds(449, 114, 162, 14);
 		contentPane.add(lblIngreseElGenero);
 		
 		txtautor = new JTextField();
 		txtautor.setForeground(Color.BLUE);
 		txtautor.setBackground(Color.CYAN);
 		txtautor.setColumns(10);
-		txtautor.setBounds(449, 281, 162, 31);
+		txtautor.setBounds(449, 254, 162, 31);
 		contentPane.add(txtautor);
 		
 		txtalbum = new JTextField();
 		txtalbum.setForeground(Color.BLUE);
 		txtalbum.setBackground(Color.CYAN);
 		txtalbum.setColumns(10);
-		txtalbum.setBounds(449, 229, 162, 31);
+		txtalbum.setBounds(449, 195, 162, 31);
 		contentPane.add(txtalbum);
 		
 		JLabel lblIngreseElAutor = new JLabel("Ingrese el autor");
 		lblIngreseElAutor.setForeground(Color.RED);
 		lblIngreseElAutor.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblIngreseElAutor.setBounds(449, 265, 162, 14);
+		lblIngreseElAutor.setBounds(449, 231, 162, 14);
 		contentPane.add(lblIngreseElAutor);
 		
 		JLabel lblIngreseElAlbum = new JLabel("Ingrese el album");
 		lblIngreseElAlbum.setForeground(Color.RED);
 		lblIngreseElAlbum.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblIngreseElAlbum.setBounds(449, 215, 162, 14);
+		lblIngreseElAlbum.setBounds(449, 181, 162, 14);
 		contentPane.add(lblIngreseElAlbum);
 		
 		txtid = new JTextField();
 		txtid.setForeground(Color.BLUE);
 		txtid.setBackground(Color.CYAN);
 		txtid.setColumns(10);
-		txtid.setBounds(449, 64, 162, 31);
+		txtid.setBounds(449, 25, 162, 31);
 		contentPane.add(txtid);
 		
 		JLabel lblIngreseElId = new JLabel("Ingrese el id");
 		lblIngreseElId.setForeground(Color.RED);
 		lblIngreseElId.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		lblIngreseElId.setBounds(449, 49, 162, 14);
+		lblIngreseElId.setBounds(449, 0, 162, 14);
 		contentPane.add(lblIngreseElId);
-		
-		txtresul = new JTextField();
-		txtresul.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-			}
-		});
-		txtresul.setForeground(Color.RED);
-		txtresul.setBackground(Color.CYAN);
-		txtresul.setBounds(0, 356, 641, 55);
-		contentPane.add(txtresul);
-		txtresul.setColumns(10);
 		
 		JButton btnLimpiar = new JButton("Limpiar");
 		btnLimpiar.addActionListener(new ActionListener() {
@@ -302,7 +300,9 @@ public class Menu extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ricardo Morales\\workspace\\Estructura_datos\\imagen\\Fondo negro relieve verde.jpg"));
-		lblNewLabel.setBounds(0, -128, 641, 598);
+		lblNewLabel.setBounds(0, -132, 714, 539);
 		contentPane.add(lblNewLabel);
+		
+		
 	}
 }

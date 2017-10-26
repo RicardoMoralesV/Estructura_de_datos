@@ -6,55 +6,13 @@ public class ListaDoble {
 	private NodoDoble fin;
 	private NodoDoble inicio;
 	
-	
-	public ListaDoble(){
-		inicio=null;
-		fin=null;
-	}
-	
-
-	
-	public NodoDoble getInicio() {
-		return inicio;
-	}
-
-
-
-	public void setInicio(NodoDoble inicio) {
-		this.inicio = inicio;
-	}
-
-
-
-	public NodoDoble getFin() {
-		return fin;
-	}
-
-
-
-	public void setFin(NodoDoble fin) {
-		this.fin = fin;
-	}
-
-	public boolean vacio(){
-		
-		if(fin==null && inicio==null){
-			return true;
-			
-		}else{
-			return false;
-		}
-	 }	
-	 
-	
-	
 	public void insertarnodoadelante(musica valor)
 	{
 		if(inicio==null){
 			inicio=new NodoDoble(valor,null,null);
 			fin=inicio;
 		}else{
-			NodoDoble nuevo=new NodoDoble(valor,null,null);
+			NodoDoble nuevo=new NodoDoble(valor,null,inicio);
 			inicio.setAnterior(nuevo);
 			inicio=nuevo;
 		}
@@ -71,7 +29,7 @@ public class ListaDoble {
 			inicio=fin;
 		}else{
 			NodoDoble nuevo=new NodoDoble(valor,fin,null);
-			fin.setAnterior(nuevo);
+			fin.setSiguiente(nuevo);
 			fin=nuevo;
 		}
 	}
@@ -113,12 +71,12 @@ public class ListaDoble {
 	
 	public  StringBuilder recorrerhaciaatras(){
 		StringBuilder cadena =new  StringBuilder();
-		NodoDoble temporal=inicio;
+		NodoDoble temporal=fin;
 		cadena.append("NULL<---");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
 		cadena.append("<--->");
-		temporal=temporal.getSiguiente();
+		temporal=temporal.getAnterior();
 	}
 		cadena.append("NULL");
 		return cadena;
@@ -128,7 +86,7 @@ public class ListaDoble {
 	
 	public  StringBuilder recorrerhaciaadelante(){
 		StringBuilder cadena =new  StringBuilder();
-		NodoDoble temporal=fin;
+		NodoDoble temporal=inicio;
 		cadena.append("NULL--->");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
