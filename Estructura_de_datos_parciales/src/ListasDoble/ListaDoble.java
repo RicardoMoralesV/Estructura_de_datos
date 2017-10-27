@@ -57,7 +57,7 @@ public class ListaDoble {
 		musica valor=fin.getValor();
 		fin=fin.getAnterior();
 		
-		if(fin!=null){
+		if(fin != null){
 			fin.setSiguiente(null);
 		}
 		else{
@@ -72,7 +72,7 @@ public class ListaDoble {
 	public  StringBuilder recorrerhaciaatras(){
 		StringBuilder cadena =new  StringBuilder();
 		NodoDoble temporal=fin;
-		cadena.append("NULL<---");
+		cadena.append("NULL<--->");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
 		cadena.append("<--->");
@@ -87,7 +87,7 @@ public class ListaDoble {
 	public  StringBuilder recorrerhaciaadelante(){
 		StringBuilder cadena =new  StringBuilder();
 		NodoDoble temporal=inicio;
-		cadena.append("NULL--->");
+		cadena.append("NULL<--->");
 		while(temporal!=null){
 		cadena.append(temporal.getValor());
 		cadena.append("<--->");

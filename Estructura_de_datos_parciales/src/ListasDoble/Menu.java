@@ -211,6 +211,12 @@ public class Menu extends JFrame {
 		contentPane.add(btnrecorridoatras);
 		
 		JButton btnsalir = new JButton("Salir");
+		btnsalir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.exit(0);
+			}
+		});
 		btnsalir.setForeground(Color.RED);
 		btnsalir.setFont(new Font("Tahoma", Font.ITALIC, 13));
 		btnsalir.setBackground(Color.CYAN);
